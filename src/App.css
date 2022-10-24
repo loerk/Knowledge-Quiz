@@ -1,20 +1,59 @@
-body {
-  background-color: #afaff0;
+:root {
+  background: repeating-conic-gradient(
+    at 50% 45%,
+    #4690eb 10deg,
+    rgb(17, 211, 53) 15deg
+  );
+  background-size: 29px 29px;
+  font-family: helvetica;
   margin: 0;
+}
+root:after {
+  content: '';
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: 3;
+  background: repeating-conic-gradient(
+    at 95% 5%,
+    #34343434 15deg,
+    #34343434 17deg,
+    #eeffee45 27.9deg,
+    #eeffee45 45deg,
+    #34343434 47deg,
+    #eeffee45 47.9deg
+  );
+}
+input,
+select {
+  height: 25px;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  border-bottom: 2px solid #00ffa2;
 }
 
 .container {
-  max-width: 900px;
+  width: 100%;
   margin: 1rem 2rem;
 }
-
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .header {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
   flex-wrap: wrap;
-  background-color: white;
-  padding: 0 1.5rem;
+  background-color: #ffffffc7;
+  padding: 1rem 1.5rem;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -31,8 +70,7 @@ body {
 }
 
 .btn {
-  background-color: hsl(200, 100%, 50%);
-  color: white;
+  background-color: #00ffa2;
   padding: 0.5em 1em;
   border-radius: 0.3em;
   border: none;
@@ -40,7 +78,7 @@ body {
 }
 
 .btn:hover {
-  background-color: hsl(200, 100%, 40%);
+  background-color: #4bf2b5;
 }
 
 .card-grid {
@@ -48,16 +86,18 @@ body {
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
+  padding-top: 10rem;
 }
 
 .card {
+  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   border-radius: 0.25rem;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-  background-color: white;
+  background-color: #ffffffb1;
   transform-style: preserve-3d;
   transition: 150ms;
   cursor: pointer;
